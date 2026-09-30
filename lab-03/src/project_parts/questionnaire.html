@@ -1,0 +1,192 @@
+﻿<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Анкета учасника з прикладами елементів HTML5 та способів надсилання форми.">
+    <title>Анкета учасника · HTML5</title>
+</head>
+<body>
+<header class="page-header">
+    <p class="eyebrow">HTML5 · Форма зворотного зв’язку</p>
+    <h1>Анкета учасника</h1>
+    <p class="intro">Заповніть анкету, щоб розповісти про себе та свої вподобання. Обов’язкові поля позначені зірочкою; підказки й перевірки допоможуть ввести дані коректно.</p>
+</header>
+
+<main>
+    <section class="panel" aria-labelledby="questionnaire-title">
+        <div class="panel-heading">
+            <h2 id="questionnaire-title">Ваша інформація</h2>
+            <p>Основна форма надсилає дані методом GET на цю ж сторінку — введені значення з’являться в адресному рядку.</p>
+        </div>
+
+        <form id="questionnaire" action="questionnaire.html" method="get">
+            <fieldset>
+                <legend>Особисті дані</legend>
+                <div class="field-grid">
+                    <div class="field">
+                        <label for="full-name">Ім’я та прізвище <span class="required-mark">*</span></label>
+                        <input id="full-name" name="fullName" type="text" value="" placeholder="Наприклад, Олена Коваль" autocomplete="name" required tabindex="0">
+                        <p class="hint">Вкажіть, як до вас звертатися.</p>
+                    </div>
+                    <div class="field">
+                        <label for="organization">Навчальний заклад або компанія</label>
+                        <input id="organization" name="organization" type="text" value="" placeholder="Назва закладу чи компанії" tabindex="0">
+                    </div>
+                    <div class="field">
+                        <label for="email">Електронна пошта <span class="required-mark">*</span></label>
+                        <input id="email" name="email" type="email" value="" placeholder="name@example.com" autocomplete="off" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" title="Введіть адресу на зразок name@example.com" required tabindex="0">
+                        <p class="hint">Автозаповнення вимкнене; формат адреси перевіряється.</p>
+                    </div>
+                    <div class="field">
+                        <label for="phone">Мобільний номер <span class="required-mark">*</span></label>
+                        <input id="phone" name="phone" type="tel" value="" placeholder="+380501234567" pattern="(?:\+380|0)[0-9]{9}" title="Введіть номер у форматі +380XXXXXXXXX або 0XXXXXXXXX" required tabindex="0">
+                        <p class="hint">Формат: +380XXXXXXXXX або 0XXXXXXXXX.</p>
+                    </div>
+                    <div class="field">
+                        <label for="birth-date">Дата народження <span class="required-mark">*</span></label>
+                        <input id="birth-date" name="birthDate" type="date" value="" required tabindex="0">
+                    </div>
+                    <div class="field">
+                        <label for="password">Пароль <span class="required-mark">*</span></label>
+                        <input id="password" name="password" type="password" value="" placeholder="6 символів: Aa1234" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{6}" title="Рівно 6 символів: щонайменше одна велика літера, одна мала літера та одна цифра" required tabindex="0">
+                        <p class="hint">Рівно 6 символів, з великою й малою літерами та цифрою.</p>
+                    </div>
+                    <div class="field field-wide">
+                        <label for="about">Коротко про себе</label>
+                        <textarea id="about" name="about" placeholder="Розкажіть про свої інтереси, досвід або очікування…" tabindex="0"></textarea>
+                        <p class="hint">Значення textarea задається її текстом між відкривальним і закривальним тегами.</p>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Участь та зв’язок</legend>
+                <div class="field-grid">
+                    <div class="field field-wide">
+                        <span class="field-label">Як плануєте долучитися? <span class="required-mark">*</span></span>
+                        <div class="choice-list">
+                            <label class="choice" for="participation-online"><input id="participation-online" name="participation" type="radio" value="online" required tabindex="0">Онлайн</label>
+                            <label class="choice" for="participation-in-person"><input id="participation-in-person" name="participation" type="radio" value="in-person" tabindex="0">Особисто</label>
+                            <label class="choice" for="participation-undecided"><input id="participation-undecided" name="participation" type="radio" value="undecided" tabindex="0">Ще не вирішив/ла</label>
+                        </div>
+                    </div>
+                    <div class="field field-wide">
+                        <span class="field-label">Зручний спосіб отримувати новини <span class="required-mark">*</span></span>
+                        <div class="choice-list">
+                            <label class="choice" for="contact-email"><input id="contact-email" name="contactMethod" type="radio" value="email" checked required tabindex="0">Електронна пошта</label>
+                            <label class="choice" for="contact-phone"><input id="contact-phone" name="contactMethod" type="radio" value="phone" tabindex="0">Телефон</label>
+                            <label class="choice" for="contact-messenger"><input id="contact-messenger" name="contactMethod" type="radio" value="messenger" tabindex="0">Месенджер</label>
+                        </div>
+                    </div>
+                    <div class="field field-wide">
+                        <span class="field-label">Які теми вас цікавлять? (можна обрати кілька)</span>
+                        <div class="choice-list">
+                            <label class="choice" for="topic-html"><input id="topic-html" name="topics" type="checkbox" value="html" tabindex="0">HTML та доступність</label>
+                            <label class="choice" for="topic-css"><input id="topic-css" name="topics" type="checkbox" value="css" tabindex="0">CSS і дизайн</label>
+                            <label class="choice" for="topic-js"><input id="topic-js" name="topics" type="checkbox" value="javascript" tabindex="0">JavaScript</label>
+                            <label class="choice" for="topic-career"><input id="topic-career" name="topics" type="checkbox" value="career" tabindex="0">Кар’єра у веброзробці</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Формат і напрям</legend>
+                <div class="field-grid">
+                    <div class="field">
+                        <label for="experience">Ваш рівень <span class="required-mark">*</span></label>
+                        <select id="experience" name="experience" required tabindex="0">
+                            <option value="beginner">Початківець</option>
+                            <option value="intermediate">Маю базовий досвід</option>
+                            <option value="student" selected>Студент / студентка</option>
+                            <option value="advanced">Впевнений рівень</option>
+                            <option value="professional">Професіонал</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="format">Бажані формати (можна обрати кілька)</label>
+                        <select id="format" name="formats" multiple size="6" tabindex="0">
+                            <option value="talk">Лекції</option>
+                            <option value="workshop">Практичні майстерні</option>
+                            <option value="discussion">Дискусії</option>
+                            <option value="networking">Нетворкінг</option>
+                            <option value="mentoring">Менторські зустрічі</option>
+                            <option value="projects">Командні проєкти</option>
+                        </select>
+                        <p class="hint">На комп’ютері утримуйте Ctrl (Windows) або Command (Mac), щоб вибрати кілька пунктів.</p>
+                    </div>
+                    <div class="field">
+                        <label for="direction">Оберіть напрям</label>
+                        <select id="direction" name="direction" tabindex="0">
+                            <optgroup label="Веброзробка">
+                                <option value="frontend">Frontend</option>
+                                <option value="backend">Backend</option>
+                                <option value="fullstack">Full-stack</option>
+                            </optgroup>
+                            <optgroup label="Дизайн">
+                                <option value="ux">UX-дизайн</option>
+                                <option value="ui">UI-дизайн</option>
+                                <option value="graphic">Графічний дизайн</option>
+                            </optgroup>
+                            <optgroup label="Дані й тестування">
+                                <option value="analytics">Аналітика даних</option>
+                                <option value="qa">Тестування (QA)</option>
+                                <option value="automation">Автоматизація</option>
+                            </optgroup>
+                            <optgroup label="Інше">
+                                <option value="management">Управління проєктами</option>
+                                <option value="content">Технічний контент</option>
+                                <option value="other">Інший напрям</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="city">Місто</label>
+                        <input id="city" name="city" type="text" value="" list="city-suggestions" placeholder="Почніть вводити назву міста" tabindex="0">
+                        <datalist id="city-suggestions">
+                            <option value="Київ"></option>
+                            <option value="Львів"></option>
+                            <option value="Одеса"></option>
+                            <option value="Харків"></option>
+                            <option value="Дніпро"></option>
+                        </datalist>
+                    </div>
+                </div>
+            </fieldset>
+
+            <p class="request-note">Після надсилання браузер сформує URL із парами «ім’я=значення». Пароль у навчальному прикладі також потрапить до URL GET-запиту; не використовуйте такий спосіб для реальних паролів.</p>
+            <div class="action-row">
+                <button class="button-primary" type="submit" name="formAction" value="send-questionnaire" tabindex="0">Надіслати анкету (GET)</button>
+                <button class="button-secondary" type="reset" name="formAction" value="reset-questionnaire" tabindex="0">Очистити форму</button>
+            </div>
+            <p class="request-example"><strong>Приклад:</strong> GET questionnaire.html?fullName=Олена+Коваль&amp;email=name%40example.com&amp;participation=online</p>
+        </form>
+    </section>
+
+    <section class="panel" aria-labelledby="upload-title">
+        <div class="panel-heading">
+            <h2 id="upload-title">Аудіофайли</h2>
+            <p>Окрема форма надсилає кілька аудіофайлів методом POST. Для передавання файлів потрібне кодування multipart/form-data.</p>
+        </div>
+        <form id="audio-upload" action="questionnaire.html" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Завантаження аудіо</legend>
+                <div class="field">
+                    <label for="audio-files">Оберіть один або кілька аудіофайлів <span class="required-mark">*</span></label>
+                    <input class="file-control" id="audio-files" name="audioFiles" type="file" accept="audio/*" multiple required tabindex="0">
+                    <p class="hint">Дозволено аудіоформати; виберіть більше одного файлу, якщо потрібно. Браузер передасть вибрані файли як значення поля.</p>
+                </div>
+            </fieldset>
+            <div class="action-row">
+                <button class="button-primary" type="submit" name="formAction" value="upload-audio" tabindex="0">Надіслати аудіо (POST)</button>
+                <button class="button-secondary" type="reset" name="formAction" value="reset-audio" tabindex="0">Очистити вибір</button>
+            </div>
+            <p class="request-example"><strong>Приклад:</strong> POST questionnaire.html · Content-Type: multipart/form-data; boundary=… · тіло запиту містить поле audioFiles і вибрані файли.</p>
+        </form>
+    </section>
+</main>
+<footer class="page-footer">Поля форми можна проходити клавішею Tab; порядок відповідає їхньому розташуванню на сторінці.</footer>
+</body>
+</html>
+
