@@ -1,0 +1,111 @@
+/* ===== Блок-обгортка ===== */
+div {
+    width: 500px;
+    padding: 20px;
+    background-color: rgb(255, 165, 0);
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== Заголовок 1-го рівня ===== */
+h1 {
+    margin: 0 0 10px;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+/* ===== Маркеровані списки (загальні вимоги) =====*/
+ul,
+li {
+    list-style: none inside;
+}
+
+li {
+    background-repeat: no-repeat;
+    background-size: 24px;
+}
+
+/* ===== Список 1-го рівня ===== */
+ul {
+    margin: 0;
+    padding: 0 20px 0 50px;
+    background-color: rgb(103, 158, 128);
+}
+
+/* Пункти 1-го рівня: іконка розташована в лівому полі списку (50px) */
+div > ul > li {
+    margin-left: -50px;
+    padding-left: 50px;
+    background-image: url('icons/rule.svg');      /* ІКОНКА: «підготовчий етап» / «відпочинок» */
+    background-position: 10px top;
+    background-size: 32px;
+}
+
+/* ===== Список 2-го рівня ===== */
+div > ul > li > ul {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    font-size: 18px;
+    font-style: italic;
+}
+
+div > ul > li > ul > li {
+    margin-bottom: 10px;
+    padding-left: 40px;
+    background-color: rgb(153, 180, 102);
+    background-position: 10px center;
+    background-size: 24px;
+}
+
+/* ===== Іконки пунктів 2-го рівня ===== */
+.route {
+    background-image: url('icons/ad_units.svg');       /* ІКОНКА: обрати маршрут */
+}
+
+.flights {
+    background-image: url('icons/airplane_ticket.svg');  /* ІКОНКА: квитки на літак */
+}
+
+.hotel {
+    background-image: url('icons/hotel.svg');            /* ІКОНКА: готель */
+}
+
+.car {
+    background-image: url('icons/car_rental.svg');       /* ІКОНКА: оренда авто */
+}
+
+.bars {
+    background-image: url('icons/local_bar.svg');        /* ІКОНКА: бари */
+}
+
+.casino {
+    background-image: url('icons/casino.svg');           /* ІКОНКА: казино */
+}
+
+.museums {
+    background-image: url('icons/museum.svg');           /* ІКОНКА: музеї */
+}
+
+.festivals {
+    background-image: url('icons/festival.svg');         /* ІКОНКА: фестивалі */
+}
+
+/* ===== Елементи span ===== */
+span {
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+/* span у списку 1-го рівня */
+div > ul > li > span {
+    margin-bottom: 10px;
+    background-color: rgb(199, 124, 106);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* span у списку 2-го рівня */
+div > ul > li > ul > li > span {
+    background-color: rgb(218, 106, 32);
+}

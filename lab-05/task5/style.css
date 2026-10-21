@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== 1. box-sizing ===== */
+#box-sizing div {
+    display: inline-block;
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border: 5px solid #1e40af;
+    background-color: #dbeafe;
+    vertical-align: top;
+}
+
+#box-sizing div:nth-of-type(1) {
+    box-sizing: content-box;
+    /* Загальна ширина: 300 + 2 * 20 + 2 * 5 = 350px */
+}
+
+#box-sizing div:nth-of-type(2) {
+    box-sizing: border-box;
+    /* Загальна ширина: 300px */
+}
+
+/* ===== 2. overflow ===== */
+#overflow {
+    margin-bottom: 120px; /* місце під текст, що виходить за межі блоку при overflow: visible */
+}
+
+#overflow div {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 220px;
+    max-height: 80px;
+    margin: 0 20px 20px 0;
+    border: 2px solid #1e40af;
+    vertical-align: top;
+}
+
+#overflow div:nth-of-type(1) {
+    overflow: visible;
+}
+
+#overflow div:nth-of-type(2) {
+    overflow: hidden;
+}
+
+#overflow div:nth-of-type(3) {
+    overflow: scroll;
+}
+
+#overflow div:nth-of-type(4) {
+    overflow: auto;
+}
+
+/* ===== 3. display ===== */
+#display ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#display li {
+    display: inline-block;
+}
+
+#display a {
+    display: block;
+    padding: 10px 20px;
+    background-color: #1e40af;
+    color: #fff;
+    text-decoration: none;
+}
+
+#display a:hover {
+    background-color: #3b63d4;
+}
+
+/* Третій пункт меню приховано.
+   display: none повністю видаляє елемент з потоку документа: він не відображається,
+   не займає місця (сусідні пункти зсуваються), не отримує фокус і недоступний
+   для скрінрідерів.
+   Інші способи приховування відрізняються:
+   - visibility: hidden – елемент невидимий, але місце під нього зберігається;
+   - opacity: 0 – елемент прозорий, місце зберігається, і на нього все ще можна клікати. */
+#display li:nth-child(3) {
+    display: none;
+}

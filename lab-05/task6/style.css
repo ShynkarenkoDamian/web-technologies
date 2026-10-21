@@ -1,0 +1,137 @@
+/* ===== Фон сторінки ===== */
+body {
+    background-color: #1b2a41;              /* запасний колір, поки завантажується зображення */
+    background-image: url('img/bg.jpg');    /* ЗОБРАЖЕННЯ: фон сторінки */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;           /* фон нерухомий під час прокручування */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== Контейнер ===== */
+/* Коли вікно браузера вужче за 320px, контейнер перестає стискатися (min-width: 320px),
+   його ширина залишається 320px, тож він виходить за межі вікна
+   і внизу з'являється горизонтальна смуга прокрутки. */
+.container {
+    box-sizing: border-box;
+    max-width: 900px;
+    min-width: 320px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+h1,
+h2 {
+    margin: 0 0 10px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+/* Підпис, що читається на будь-якому фоні */
+.label {
+    display: inline-block;
+    padding: 2px 8px;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #000;
+    font-weight: 700;
+}
+
+/* ===== Блок «Теги» (display) ===== */
+/* Елементи div стали рядковими (inline) і виводяться в один рядок.
+   width та height для них не діють: розмір рядкового елемента визначається
+   лише його вмістом, а властивості width і height до inline-елементів не застосовуються. */
+.tags div {
+    display: inline;
+    width: 200px;
+    height: 100px;
+    background-color: #cfe3ff;
+    border: 1px solid #1b2a41;
+}
+
+/* Елементи span стали блоковими (block), тому розташувались стовпцем,
+   і width: 150px на них діє. */
+.tags span {
+    display: block;
+    width: 150px;
+    margin-top: 5px;
+    background-color: #ffe3b3;
+    border: 1px solid #1b2a41;
+}
+
+/* ===== Блок «Повторення фону» (background-repeat) ===== */
+/* Різниця між space та round:
+   - space: зображення не масштабується, повторюється ціле число разів, а залишок
+     розподіляється порожніми проміжками між картинками;
+   - round: кількість зображень теж ціла, але вільне місце заповнюється масштабуванням
+     (картинки трохи розтягуються або стискаються), тому проміжків немає. */
+.repeat div {
+    height: 200px;
+    margin-bottom: 10px;
+    border: 1px solid #1b2a41;
+    background-image: url('img/icon.png');  /* ЗОБРАЖЕННЯ: іконка 60px × 60px */
+}
+
+.repeat-x {
+    background-repeat: repeat-x;
+}
+
+.repeat-y {
+    background-repeat: repeat-y;
+}
+
+.repeat-space {
+    background-repeat: space;
+}
+
+.repeat-round {
+    background-repeat: round;
+}
+
+/* ===== Блок «Масштабування» (background-size) ===== */
+.size div {
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+    margin-right: 20px;
+    border: 2px solid #1b2a41;
+    background-image: url('img/photo.jpg'); /* ЗОБРАЖЕННЯ: одна й та сама картинка для обох блоків */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.size-contain {
+    background-size: contain;
+}
+
+.size-cover {
+    background-size: cover;
+}
+
+/* ===== Блок «Прокручування фону» (background-attachment) ===== */
+/* Різниця під час прокручування вмісту всередині блоку:
+   - scroll: фон прикріплений до самого блоку (його видимої області), тому під час
+     прокручування тексту всередині блоку фон залишається на місці;
+   - local: фон прикріплений до вмісту блоку, тому він прокручується разом із текстом. */
+.attachment div {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 45%;
+    max-height: 150px;
+    margin-right: 2%;
+    overflow: auto;
+    vertical-align: top;
+    border: 1px solid #1b2a41;
+    background-image: url('img/icon.png');  /* ЗОБРАЖЕННЯ: одна й та сама картинка для обох блоків */
+}
+
+.attachment-scroll {
+    background-attachment: scroll;
+}
+
+.attachment-local {
+    background-attachment: local;
+}
