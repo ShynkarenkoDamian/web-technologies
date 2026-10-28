@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Завдання 6 — CSS-попап</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="popup-page">
+    <header class="topbar">
+      <a class="topbar-link" href="#">Mail</a>
+      <a class="topbar-link" href="#">Images</a>
+      <div class="popup-shell">
+        <label class="popup-button">
+          <input class="popup-toggle" type="checkbox" tabindex="0" aria-label="Відкрити або закрити меню програм">
+          <span class="popup-button-face" aria-hidden="true">
+            <svg class="apps-symbol" viewBox="0 0 24 24">
+              <circle cx="5" cy="5" r="2"></circle><circle cx="12" cy="5" r="2"></circle><circle cx="19" cy="5" r="2"></circle>
+              <circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle>
+              <circle cx="5" cy="19" r="2"></circle><circle cx="12" cy="19" r="2"></circle><circle cx="19" cy="19" r="2"></circle>
+            </svg>
+          </span>
+        </label>
+
+        <section class="popup-panel" role="region" aria-label="Меню програм" tabindex="0">
+          <div class="popup-grid">
+            <button class="popup-app" type="button" tabindex="0"><span class="popup-app-icon popup-app-icon--calendar" aria-hidden="true">📅</span><span class="popup-app-name">Calendar</span></button>
+            <button class="popup-app" type="button" tabindex="0"><span class="popup-app-icon popup-app-icon--mail" aria-hidden="true">✉️</span><span class="popup-app-name">Mail</span></button>
+            <button class="popup-app" type="button" tabindex="0"><span class="popup-app-icon popup-app-icon--news" aria-hidden="true">📰</span><span class="popup-app-name">News</span></button>
+            <button class="popup-app" type="button" tabindex="0"><span class="popup-app-icon popup-app-icon--map" aria-hidden="true">📍</span><span class="popup-app-name">Map</span></button>
+            <button class="popup-app" type="button" tabindex="0"><span class="popup-app-icon popup-app-icon--files" aria-hidden="true">📁</span><span class="popup-app-name">Files</span></button>
+            <button class="popup-app" type="button" tabindex="0"><span class="popup-app-icon popup-app-icon--contacts" aria-hidden="true">👤</span><span class="popup-app-name">Contacts</span></button>
+            <button class="popup-app" type="button" tabindex="0"><span class="popup-app-icon popup-app-icon--translate" aria-hidden="true">🌐</span><span class="popup-app-name">Translate</span></button>
+            <button class="popup-app" type="button" tabindex="0"><span class="popup-app-icon popup-app-icon--videos" aria-hidden="true">▶️</span><span class="popup-app-name">Videos</span></button>
+            <button class="popup-app" type="button" tabindex="0"><span class="popup-app-icon popup-app-icon--search" aria-hidden="true">🔎</span><span class="popup-app-name">Search</span></button>
+            <button class="popup-app" type="button" tabindex="0"><span class="popup-app-icon popup-app-icon--photo" aria-hidden="true">🖼️</span><span class="popup-app-name">Photo</span></button>
+            <button class="popup-app" type="button" tabindex="0"><span class="popup-app-icon popup-app-icon--apps" aria-hidden="true">🎨</span><span class="popup-app-name">Apps</span></button>
+            <button class="popup-app" type="button" tabindex="0"><span class="popup-app-icon popup-app-icon--document" aria-hidden="true">📄</span><span class="popup-app-name">Document</span></button>
+          </div>
+
+          <label class="popup-more">
+            <input class="popup-more-toggle" type="checkbox" tabindex="0" aria-label="Додати ще іконки">
+            <span class="popup-more-face">More</span>
+          </label>
+
+          <div class="popup-extra">
+            <button class="popup-app" type="button" tabindex="0"><span class="popup-app-icon popup-app-icon--chat" aria-hidden="true">💬</span><span class="popup-app-name">Chat</span></button>
+            <button class="popup-app" type="button" tabindex="0"><span class="popup-app-icon popup-app-icon--classroom" aria-hidden="true">🎓</span><span class="popup-app-name">Classroom</span></button>
+            <button class="popup-app" type="button" tabindex="0"><span class="popup-app-icon popup-app-icon--collection" aria-hidden="true">🔖</span><span class="popup-app-name">Collection</span></button>
+            <button class="popup-app" type="button" tabindex="0"><span class="popup-app-icon popup-app-icon--mars" aria-hidden="true">🔴</span><span class="popup-app-name">Mars</span></button>
+            <button class="popup-app" type="button" tabindex="0"><span class="popup-app-icon popup-app-icon--blogs" aria-hidden="true">📰</span><span class="popup-app-name">Blogs</span></button>
+            <button class="popup-app" type="button" tabindex="0"><span class="popup-app-icon popup-app-icon--promos" aria-hidden="true">📣</span><span class="popup-app-name">Promos</span></button>
+          </div>
+        </section>
+      </div>
+      <span class="notification-symbol" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 22a2.2 2.2 0 0 0 2.15-1.8h-4.3A2.2 2.2 0 0 0 12 22Zm7-5.2-1.8-2.1V10a5.2 5.2 0 0 0-4.2-5.1V4a1 1 0 0 0-2 0v.9A5.2 5.2 0 0 0 6.8 10v4.7L5 16.8v1.1h14v-1.1Z"></path></svg>
+      </span>
+      <span class="profile-symbol" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0Z"></path></svg>
+      </span>
+    </header>
+    <main class="page-background" aria-hidden="true"></main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 28px 16px;
+  color: #171717;
+  background: #f6f6f6;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.page { width: min(820px, 100%); margin: 0 auto; }
+.page-title { margin: 0 0 18px; font-size: 1.2rem; }
+.block-stage { display: grid; gap: 22px; }
+.position-block { position: relative; overflow: hidden; border: 3px solid #171717; box-shadow: 0 2px 3px #0003; }
+.position-block--top { z-index: 1; height: clamp(90px, 14.4vw, 118px); background: #00b657; }
+.block-row { display: grid; grid-template-columns: 27% 1fr; gap: 22px; min-height: clamp(180px, 29.3vw, 240px); }
+.position-block--left { z-index: 2; background: #00b657; }
+.position-block--right { z-index: 1; background: #b7a3ce; }
+.position-block--bottom { z-index: 1; height: clamp(68px, 11vw, 90px); background: #b7a3ce; }
+.block-text { position: absolute; z-index: 3; display: block; font-size: clamp(16px, 2.7vw, 27px); line-height: 1.55; }
+.block-text--top { top: 8%; left: 32%; color: #ecf6ef; }
+.block-text--left { top: 5%; left: 15%; width: 70%; color: #ecf6ef; text-align: center; }
+.block-text--right { top: 3%; left: 24%; color: #18151d; }
+.block-text--bottom { top: 8%; left: 32%; color: #18151d; }
+
+/* Тонкі контури показують позиції внутрішніх блоків із макета. */
+.guide { position: absolute; z-index: 2; display: block; border-color: #d8e3dc88; border-style: solid; border-width: 0; pointer-events: none; }
+.guide--top-a { top: 0; bottom: 0; left: 7.5%; border-left-width: 2px; }
+.guide--top-b { top: 0; bottom: 0; left: 14.4%; border-left-width: 2px; }
+.guide--top-c { top: 0; bottom: 0; left: 21.1%; border-left-width: 2px; }
+.guide--top-d { top: 0; bottom: 0; left: 29.3%; border-left-width: 2px; }
+.guide--top-e { top: 0; bottom: 0; left: 45.5%; border-left-width: 2px; }
+.guide--top-f { top: 0; bottom: 0; left: 78%; border-left-width: 2px; }
+.position-block--top::after { position: absolute; top: 44%; right: 0; left: 0; border-top: 2px solid #d8e3dc88; content: ""; }
+.guide--left-a { top: 0; bottom: 0; left: 28%; border-left-width: 2px; }
+.guide--left-b { top: 0; bottom: 0; left: 54%; border-left-width: 2px; }
+.guide--left-c { top: 20%; right: 0; left: 0; border-top-width: 2px; }
+.guide--right-a { top: 0; bottom: 45%; left: 22%; border-left-width: 2px; }
+.guide--right-b { top: 0; bottom: 45%; left: 32%; border-left-width: 2px; }
+.guide--right-c { top: 0; bottom: 45%; left: 38%; border-left-width: 2px; }
+.guide--right-d { top: 0; bottom: 45%; left: 57%; border-left-width: 2px; }
+.guide--right-e { top: 0; bottom: 45%; left: 63%; border-left-width: 2px; }
+.position-block--right::after { position: absolute; top: 20%; right: 0; left: 0; border-top: 2px solid #ded5e888; content: ""; }
+.guide--bottom-a { top: 0; bottom: 0; left: 7.5%; border-left-width: 2px; }
+.guide--bottom-b { top: 0; bottom: 0; left: 14.4%; border-left-width: 2px; }
+.guide--bottom-c { top: 0; bottom: 0; left: 29.3%; border-left-width: 2px; }
+.guide--bottom-d { top: 0; bottom: 0; left: 45.5%; border-left-width: 2px; }
+.position-block--bottom::after { position: absolute; top: 48%; right: 0; left: 0; border-top: 2px solid #ded5e888; content: ""; }
+
+@media (max-width: 520px) {
+  body { padding: 20px 12px; }
+  .block-stage, .block-row { gap: 12px; }
+  .block-row { grid-template-columns: 30% 1fr; }
+  .block-text { font-size: clamp(13px, 3.5vw, 18px); }
+}

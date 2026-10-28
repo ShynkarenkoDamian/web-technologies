@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Завдання 4 — навігаційні панелі</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="vertical-nav" aria-label="Вертикальна навігація">
+    <ul class="vertical-menu">
+      <li class="vertical-item">
+        <a class="vertical-link is-current" href="#home" aria-current="page"><span class="material-symbols-outlined nav-icon" aria-hidden="true">home</span><span class="vertical-label">Головна</span></a>
+        <ul class="vertical-submenu">
+          <li><a class="vertical-link" href="#overview"><span class="vertical-label">Огляд</span></a></li>
+          <li class="vertical-item">
+            <a class="vertical-link" href="#services"><span class="vertical-label">Послуги</span><span class="material-symbols-outlined submenu-arrow" aria-hidden="true">chevron_right</span></a>
+            <ul class="vertical-submenu vertical-submenu--third">
+              <li><a class="vertical-link" href="#html"><span class="vertical-label">HTML</span></a></li>
+              <li><a class="vertical-link" href="#css"><span class="vertical-label">CSS</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="vertical-item">
+        <a class="vertical-link" href="#about"><span class="material-symbols-outlined nav-icon" aria-hidden="true">info</span><span class="vertical-label">Про курс</span></a>
+        <ul class="vertical-submenu">
+          <li><a class="vertical-link" href="#about"><span class="vertical-label">Опис</span></a></li>
+          <li class="vertical-item">
+            <a class="vertical-link" href="#resources"><span class="vertical-label">Матеріали</span><span class="material-symbols-outlined submenu-arrow" aria-hidden="true">chevron_right</span></a>
+            <ul class="vertical-submenu vertical-submenu--third">
+              <li><a class="vertical-link" href="#html"><span class="vertical-label">Розмітка</span></a></li>
+              <li><a class="vertical-link" href="#css"><span class="vertical-label">Стилі</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="vertical-item">
+        <a class="vertical-link" href="#contact"><span class="material-symbols-outlined nav-icon" aria-hidden="true">work</span><span class="vertical-label">Контакти</span></a>
+        <ul class="vertical-submenu">
+          <li><a class="vertical-link" href="#contact"><span class="vertical-label">Зв'язок</span></a></li>
+          <li class="vertical-item">
+            <a class="vertical-link" href="#resources"><span class="vertical-label">Ресурси</span><span class="material-symbols-outlined submenu-arrow" aria-hidden="true">chevron_right</span></a>
+            <ul class="vertical-submenu vertical-submenu--third">
+              <li><a class="vertical-link" href="#html"><span class="vertical-label">Приклади</span></a></li>
+              <li><a class="vertical-link" href="#css"><span class="vertical-label">Довідка</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="horizontal-nav" aria-label="Горизонтальна навігація">
+    <ul class="horizontal-menu">
+      <li class="horizontal-item">
+        <a class="horizontal-link is-current" href="#home" aria-label="Головна" aria-current="page"><span class="material-symbols-outlined nav-icon" aria-hidden="true">home</span></a>
+        <ul class="horizontal-submenu">
+          <li><a class="horizontal-link" href="#overview">Огляд</a></li>
+          <li><a class="horizontal-link" href="#services">Послуги</a></li>
+        </ul>
+      </li>
+      <li class="horizontal-item">
+        <a class="horizontal-link" href="#services" aria-label="Послуги"><span class="material-symbols-outlined nav-icon" aria-hidden="true">search</span></a>
+        <ul class="horizontal-submenu">
+          <li><a class="horizontal-link" href="#html">HTML</a></li>
+          <li><a class="horizontal-link" href="#css">CSS</a></li>
+        </ul>
+      </li>
+      <li class="horizontal-item">
+        <a class="horizontal-link" href="#about" aria-label="Про курс"><span class="material-symbols-outlined nav-icon" aria-hidden="true">mail</span></a>
+        <ul class="horizontal-submenu">
+          <li><a class="horizontal-link" href="#about">Опис</a></li>
+          <li><a class="horizontal-link" href="#resources">Матеріали</a></li>
+        </ul>
+      </li>
+      <li class="horizontal-item horizontal-item--right">
+        <a class="horizontal-link" href="#contact" aria-label="Контакти"><span class="material-symbols-outlined nav-icon" aria-hidden="true">person</span></a>
+        <ul class="horizontal-submenu horizontal-submenu--right">
+          <li><a class="horizontal-link" href="#contact">Зв'язок</a></li>
+          <li><a class="horizontal-link" href="#resources">Ресурси</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="workspace-main">
+    <header class="page-header" id="home">
+      <p class="eyebrow">Завдання 4 · Лабораторна робота №6</p>
+      <h1 class="page-title">Навігаційні панелі</h1>
+      <p class="page-intro">При наведенні або фокусі відкриваються вкладені списки меню. Горизонтальна панель закріплена зверху, а внутрішня панель розділів прилипає під час прокручування.</p>
+    </header>
+
+    <nav class="sticky-nav" aria-label="Навігація розділами">
+      <ul class="sticky-menu">
+        <li><a class="sticky-link is-current" href="#overview">Огляд</a></li>
+        <li><a class="sticky-link" href="#services">Послуги</a></li>
+        <li><a class="sticky-link" href="#resources">Матеріали</a></li>
+        <li><a class="sticky-link" href="#contact">Контакти</a></li>
+      </ul>
+    </nav>
+
+    <section class="content-section" id="overview">
+      <h2 class="section-title">Огляд</h2>
+      <p>Приклад сторінки демонструє фіксоване верхнє меню, липку панель розділів і вертикальну панель на всю висоту вікна.</p>
+    </section>
+    <section class="content-section" id="services">
+      <h2 class="section-title">Послуги</h2>
+      <p>Підменю відкриваються наведенням миші або клавіатурним фокусом на пункті навігації.</p>
+    </section>
+    <section class="content-section" id="html">
+      <h2 class="section-title">HTML</h2>
+      <p>Вкладені марковані списки задають рівні навігації та посилання між розділами.</p>
+    </section>
+    <section class="content-section" id="css">
+      <h2 class="section-title">CSS</h2>
+      <p>Позиціонування використовує fixed для верхньої панелі, sticky для панелі розділів та absolute для випадних списків.</p>
+    </section>
+    <section class="content-section" id="about">
+      <h2 class="section-title">Про курс</h2>
+      <p>Поточний пункт позначено окремим стилем, а стан hover змінює кольори елементів навігації.</p>
+    </section>
+    <section class="content-section" id="resources">
+      <h2 class="section-title">Матеріали</h2>
+      <p>Для першого рівня обох навігацій використано Google Fonts Icons.</p>
+    </section>
+    <section class="content-section" id="contact">
+      <h2 class="section-title">Контакти</h2>
+      <p>Останній пункт горизонтального меню вирівнюється праворуч за допомогою float.</p>
+    </section>
+  </main>
+</body>
+</html>
