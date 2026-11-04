@@ -1,0 +1,49 @@
+/* Some default styles to make each box visible */
+.box {
+    color:white;
+    font-size: 100px;
+    text-align: center;
+    text-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+    padding: 10px;
+    }
+/* Colours for each box */
+
+.box1 { background: #1abc9c;}
+.box2 { background: #3498db;}
+.box3 { background: #9b5966;}
+.box4 { background: #34495e;}
+.box5 { background: #f1c40f;}
+.box6 { background: #e67e22;}
+
+/* We start writing out flexbox here. The above is just page setup */
+.container {
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:flex;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -webkit-flex-direction:column;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    -webkit-align-content:center;
+    -ms-flex-line-pack:center;
+    align-content:center;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+}
+
+.box1 {
+    -webkit-box-flex:10;
+    -webkit-flex:10 5 450px;
+    -ms-flex:10 5 450px;
+    flex:10 5 450px;
+}
+
+.box2 {
+    -webkit-box-flex:1;
+    -webkit-flex:1 1 360px;
+    -ms-flex:1 1 360px;
+    flex:1 1 360px;
+}
