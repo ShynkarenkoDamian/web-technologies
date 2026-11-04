@@ -1,0 +1,54 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  background: #fff;
+  color: #444;
+  display: flex;
+  justify-content: center;
+}
+
+/* Головний контейнер: вертикальний flex */
+.weather {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 420px;
+  padding: 0 6px;
+}
+
+/* ---------- Поточна погода ---------- */
+.current { display: flex; flex-direction: column; padding: 10px 0 14px; }
+.city { font-size: 44px; font-weight: 300; line-height: 1.1; }
+.date, .condition { font-size: 15px; color: #666; margin-top: 4px; }
+
+.current-main {
+  display: flex;
+  justify-content: space-between;   /* зліва температура, справа деталі */
+  align-items: center;
+  margin-top: 8px;
+}
+.temp-block { display: flex; align-items: center; gap: 14px; }
+.temp-block img, .temp-block svg { width: 64px; height: 64px; }
+.temp { display: flex; align-items: flex-start; font-size: 52px; font-weight: 300; }
+.temp small { font-size: 16px; margin: 6px 0 0 4px; color: #777; }
+
+.details { display: flex; flex-direction: column; gap: 2px; font-size: 14px; color: #888; }
+.details b { font-weight: 400; color: #555; }
+
+/* ---------- Список днів ---------- */
+.forecast { display: flex; flex-direction: column; border-top: 1px solid #ccc; }
+
+.day {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  border-bottom: 1px solid #ddd;
+}
+.day-name  { flex: 0 0 30%; font-weight: 700; font-size: 16px; }
+.day-icon  { flex: 0 0 22%; display: flex; justify-content: center; }
+.day-icon img, .day-icon svg { width: 44px; height: 44px; }
+.day-temp  { flex: 0 0 18%; display: flex; flex-direction: column; font-size: 16px; line-height: 1.3; }
+.day-temp .lo { color: #999; }
+.day-pollen { flex: 1; text-align: right; color: #888; font-size: 16px; }
+.day-pollen b { font-weight: 400; color: #555; }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Погода</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="weather" id="app"></div>
+
+<script>
+// ---------- Налаштування ----------
+const city = "New York, NY";
+const days = 7;                       // n — кількість днів
+
+// ---------- Дані (для більшого n значення повторюються по колу) ----------
+const icons = [
+  "icons/iconfinder_weather07.png",   // гроза з дощем
+  "icons/iconfinder_weather01.png",   // сонце
+  "icons/iconfinder_weather14.png",   // сонце з парасолею
+  "icons/iconfinder_weather02.png",   // сонце і хмара
+  "icons/iconfinder_weather06.png",   // дощ
+  "icons/iconfinder_weather05.png",   // слабкий дощ
+  "icons/iconfinder_weather03.png",   // хмарно з сонцем
+  "icons/iconfinder_weather13.png",   // сніг
+  "icons/iconfinder_weather09.png",   // ніч, хмари
+  "icons/iconfinder_weather10.png"    // мряка
+];
+const high = [68, 50, 55, 54, 64, 64, 61];
+const low  = [36, 39, 39, 43, 46, 50, 50];
+
+const dayNames   = ["Неділя", "Понеділок", "Вівторок", "Середа", "Четвер", "П’ятниця", "Субота"];
+const monthNames = ["січня", "лютого", "березня", "квітня", "травня", "червня",
+                    "липня", "серпня", "вересня", "жовтня", "листопада", "грудня"];
+
+// ---------- Список днів ----------
+const today = new Date();
+let rows = "";
+
+for (let i = 0; i < days; i++) {
+  const date = new Date(today);
+  date.setDate(today.getDate() + i);
+
+  let name = dayNames[date.getDay()];
+  if (i === 0) {
+    name = "Сьогодні";
+  }
+
+  rows += `
+    <div class="day">
+      <div class="day-name">${name}</div>
+      <div class="day-icon"><img src="${icons[i % icons.length]}" alt=""></div>
+      <div class="day-temp">
+        <span class="hi">${high[i % high.length]}°</span>
+        <span class="lo">${low[i % low.length]}°</span>
+      </div>
+      <div class="day-pollen">Пилок <b>36</b></div>
+    </div>`;
+}
+
+// ---------- Вивід на сторінку ----------
+document.getElementById("app").innerHTML = `
+  <section class="current">
+    <h1 class="city">${city}</h1>
+    <div class="date">${dayNames[today.getDay()]}, ${today.getDate()} ${monthNames[today.getMonth()]}</div>
+    <div class="condition">Похмуро</div>
+    <div class="current-main">
+      <div class="temp-block">
+        <img src="icons/iconfinder_weather04.png" alt="">
+        <div class="temp">58<small>°F</small></div>
+      </div>
+      <div class="details">
+        <span>Опади: <b>100%</b></span>
+        <span>Вологість: <b>97%</b></span>
+        <span>Вітер: <b>4 mph SW</b></span>
+        <span>Пилок: <b>36</b></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="forecast">${rows}</section>`;
+</script>
+</body>
+</html>
