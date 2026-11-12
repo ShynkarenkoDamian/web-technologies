@@ -1,0 +1,29 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { font-family: Arial, sans-serif; color: #222; background: #fff; --gap: 8px; --block-color: #ffda3f; }
+body { padding: 16px; }
+main { width: min(1200px, 100%); margin: 0 auto; }
+.back { display: inline-block; margin-bottom: 18px; color: #164a72; }
+h1 { margin-bottom: 8px; }
+main > p { margin-bottom: 16px; color: #555; }
+.tree { display: grid; gap: var(--gap); counter-reset: block; }
+.level { display: grid; gap: var(--gap); }
+.level-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.level-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.level-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.level-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.level-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.level-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.block { min-width: 0; min-height: 72px; display: grid; place-items: center; border: 5px solid white; background: var(--block-color); color: white; font: 40px Georgia, serif; }
+.block::before { counter-increment: block; content: counter(block); }
+.level-12 .block { min-height: 68px; font-size: clamp(18px, 3vw, 34px); }
+@media (max-width: 768px) {
+  body { padding: 12px; }
+  :root { --gap: 5px; }
+  .block { min-height: 60px; border-width: 3px; font-size: 32px; }
+  .level-12 .block { min-height: 56px; font-size: 20px; }
+}
+@media (max-width: 576px) {
+  :root { --gap: 3px; }
+  .block { min-height: 52px; border-width: 2px; font-size: 26px; }
+  .level-12 .block { min-height: 48px; font-size: 16px; }
+}
